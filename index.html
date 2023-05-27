@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" href="maricuchin.jpeg">
+    <audio src="musica de fondo.mp3" autoplay loop controls>
+        audio para mamá
+      </audio>
+    <title>¡¡felicidades mami!!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url(mama.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        h1 {
+            margin-top: 50px;
+        }
+        
+        .card {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #a24343;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        
+        .card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        #loginForm {
+            max-width: 300px;
+            margin: 0 auto;
+            margin-top: 50px;
+            transform: rotateY(0deg);
+            transition: transform 0.5s;
+        }
+        
+        #loginForm.show {
+            transform: rotateY(180deg);
+        }
+        
+        #loginForm h1 {
+            margin-bottom: 20px;
+        }
+        
+        #loginForm input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        #loginForm input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #984242;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        #loginForm input[type="submit"]:hover {
+            background-color: #b35c60;
+        }
+        
+        #dedication {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        #dedication h1 {
+            margin-bottom: 20px;
+        }
+        
+        #dedication p {
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        /* Estilos para las imágenes */
+        
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        /* Estilos para los nombres */
+        
+        .card h2 {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>FELICIDADES MARICUCHIN POR TU DIA</h1>
+    <h1>toca en mi foto</h1>
+    <div class="card" id="card1">
+        <img src="laura.jpeg" alt="Laura">
+        <h2></h2>
+    </div>
+    <div class="card" id="card2" onclick="showLoginForm()">
+        <img src="fernando1.jpeg" alt="Fernando">
+        <h2></h2>
+    </div>
+    <div class="card" id="card3">
+        <img src="yessenia.jpg" alt="Yessenia">
+        <h2></h2>
+    </div>
+
+    <div id="loginForm" class="hidden">
+        <h1>LA contra es "fernando" </h1>
+        <form id="login" onsubmit="submitForm(event)">
+            <input type="password" placeholder="Contraseña" id="password" required><br>
+            <input type="submit" value="aqui la dedicatoria">
+        </form>
+    </div>
+
+    <div id="dedication" class="hidden">
+        <h1>Dedicatoria de Fernando</h1>
+        <p>Querida mamá,</p>
+        <p>Quiero aprovechar este espacio para expresarte mi amor y gratitud infinita. Eres mi guía, mi apoyo incondicional y mi inspiración.</p>
+        <p>Tu amor y dedicación son la fuerza que me impulsa a ser mejor cada día. Siempre estás ahí para escucharme, animarme y celebrar mis logros.</p>
+        <p>Hoy, en este día especial, quiero agradecerte por todo lo que has hecho por mí. Eres mi roca, mi confidente y mi mayor admiradora.</p>
+        <p>Te amo con todo mi corazón y deseo que este día esté lleno de felicidad y bendiciones para ti.</p>
+        <p>Feliz día de la madre.</p>
+        <p>Con todo mi amor,</p>
+        <p>por si acaso laura no queria colaborar con su foto fea</p>
+        <p>atte. tu hijo favorito</p>
+        <p> Fernando</p>
+    </div>
+
+    <script>
+        var card1 = document.getElementById('card1');
+        var card2 = document.getElementById('card2');
+        var card3 = document.getElementById('card3');
+        var loginForm = document.getElementById('loginForm');
+        var dedication = document.getElementById('dedication');
+        var passwordInput = document.getElementById('password');
+
+        function showLoginForm() {
+            card1.classList.add('hidden');
+            card2.classList.add('hidden');
+            card3.classList.add('hidden');
+            loginForm.classList.remove('hidden');
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+
+            var password = passwordInput.value;
+
+            if (password === 'fernando') {
+                loginForm.classList.add('hidden');
+                dedication.classList.remove('hidden');
+            } else {
+                alert('Contraseña incorrecta. Inténtalo nuevamente.');
+            }
+        }
+    </script>
+</body>
+
+</html>
